@@ -1,23 +1,20 @@
 <template>
-  <h1 class="text-center">{{ title }}: {{clubsCount}}</h1>
-  <ul>
-    <li v-for="(team, index) in clubs" :key="team.name">
-      <div>{{ team.name }} <button @click="remove(index)">x</button></div>
-    </li>
-  </ul>
-  <form @submit.prevent="addClubs">
-    <input v-model="newClub" placeholder="Type your club">
-    <button type="submit" >Add Club</button>
-  </form>
+    <div>
+      <h1 class="text-center">{{ title }}: {{clubsCount}}</h1>
+      <ul>
+        <li v-for="(team, index) in clubs" :key="team.name">
+          <div>{{ team.name }} <button @click="remove(index)">x</button></div>
+        </li>
+      </ul>
+      <form @submit.prevent="addClubs">
+        <input v-model="newClub" placeholder="Type your club">
+        <button type="submit" >Add Club</button>
+      </form>
+  </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    clubsCount() {
-      return this.clubs.length;
-    }
-  },
   data() {
     return {
       newClub: "",
@@ -31,6 +28,13 @@ export default {
       ],
     };
   },
+  
+  computed: {
+    clubsCount() {
+      return this.clubs.length;
+    }
+  },
+
   methods:{
     addClubs() {
       if (this.newClub !== '') {
@@ -42,5 +46,6 @@ export default {
       this.clubs = this.clubs.filter((team, i) => i != index)
     },
   }
+
 }
 </script>
