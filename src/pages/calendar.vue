@@ -1,13 +1,14 @@
 <template>
-  <p>t</p>
+  <calendar-content/>
 </template>
 
 <script>
-export default {
-
-}
+  import AppHeader from '@/components/AppHeader.vue';
+  import CalendarContent from '@/components/CalendarContent.vue';
+  export default {
+      components: {AppHeader, CalendarContent},
+  }
 </script>
 
 <style>
-
 </style>

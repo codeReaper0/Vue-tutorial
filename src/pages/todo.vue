@@ -1,13 +1,13 @@
 <template>
     <app-header />
-    <clubs-add />
+    <clubs-add/>
 </template>
 
 <script>
     import AppHeader from '@/components/AppHeader.vue';
-    import ClubsAdd from '@/components/ClubsAdd.vue';
+    import ToDo from '@/components/ToDo.vue';
     export default {
-    components: {AppHeader, ClubsAdd},
+    components: {AppHeader, ToDo},
     }
 </script>
 
